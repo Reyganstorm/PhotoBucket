@@ -56,15 +56,47 @@
 		E847809D282E524F007394BE /* PhotoBucket */ = {
 			isa = PBXGroup;
 			children = (
-				E847809E282E524F007394BE /* AppDelegate.swift */,
-				E84780A0282E524F007394BE /* SceneDelegate.swift */,
-				E84780A2282E524F007394BE /* ViewController.swift */,
-				E84780A4282E524F007394BE /* Main.storyboard */,
-				E84780A7282E524F007394BE /* Assets.xcassets */,
-				E84780A9282E524F007394BE /* LaunchScreen.storyboard */,
-				E84780AC282E524F007394BE /* Info.plist */,
+				E84780B3282E5422007394BE /* ViewControllers */,
+				E84780B2282E5415007394BE /* Storyboards */,
+				E84780B4282E5448007394BE /* App */,
+				E84780B5282E547A007394BE /* Resources */,
 			);
 			path = PhotoBucket;
+			sourceTree = "<group>";
+		};
+		E84780B2282E5415007394BE /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				E84780A4282E524F007394BE /* Main.storyboard */,
+				E84780A9282E524F007394BE /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		E84780B3282E5422007394BE /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				E84780A2282E524F007394BE /* ViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		E84780B4282E5448007394BE /* App */ = {
+			isa = PBXGroup;
+			children = (
+				E847809E282E524F007394BE /* AppDelegate.swift */,
+				E84780A0282E524F007394BE /* SceneDelegate.swift */,
+				E84780AC282E524F007394BE /* Info.plist */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		E84780B5282E547A007394BE /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E84780A7282E524F007394BE /* Assets.xcassets */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -289,10 +321,11 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2Q7FR5CHKB;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = PhotoBucket/Info.plist;
+				INFOPLIST_FILE = PhotoBucket/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -317,10 +350,11 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2Q7FR5CHKB;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = PhotoBucket/Info.plist;
+				INFOPLIST_FILE = PhotoBucket/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
