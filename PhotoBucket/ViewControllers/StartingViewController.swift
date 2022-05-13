@@ -42,9 +42,6 @@ class StartingViewController: UICollectionViewController {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionCell", for: indexPath) as! CollectionViewCell
         
         cell.configuration(photos[indexPath.row])
-    
-        
-    
         return cell
     }
 

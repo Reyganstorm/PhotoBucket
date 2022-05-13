@@ -81,5 +81,6 @@ struct Social: Decodable {
 // MARK: - Urls
 struct Urls: Decodable {
     let full: String
+    let small: String
 }
 

@@ -10,12 +10,14 @@ import UIKit
 class CollectionViewCell: UICollectionViewCell {
     
     @IBOutlet var textLabel: UILabel!
+    @IBOutlet var activityIndicator: UIActivityIndicatorView!
     @IBOutlet var imageView: PhotoImage!
     
-    
     func configuration(_ photoElement: PhotoElement) {
+        activityIndicator.startAnimating()
         textLabel.text = photoElement.id
-        imageView.fetch(from: photoElement.urls.full)
+        imageView.fetch(from: photoElement.urls.small)
+        activityIndicator.hidesWhenStopped = true
     }
 }
 

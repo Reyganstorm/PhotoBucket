@@ -66,6 +66,8 @@ class ImageManager {
                 return
             }
             
+            guard url == responce.url else {return}
+            
             DispatchQueue.main.async {
                 completion(data, responce)
             }

@@ -32,6 +32,10 @@
                                     <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
+                                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="p9f-Cu-lSH">
+                                            <rect key="frame" x="90" y="100" width="20" height="0.0"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </activityIndicatorView>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="19" translatesAutoresizingMaskIntoConstraints="NO" id="44l-6I-Bnw">
                                             <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
                                             <subviews>
@@ -60,6 +64,7 @@
                                 </collectionViewCellContentView>
                                 <size key="customSize" width="200" height="200"/>
                                 <connections>
+                                    <outlet property="activityIndicator" destination="p9f-Cu-lSH" id="L6s-EC-vuB"/>
                                     <outlet property="imageView" destination="4m9-FI-6IP" id="XYT-w4-BrU"/>
                                     <outlet property="textLabel" destination="1yI-jD-0w3" id="chQ-6c-SOl"/>
                                     <segue destination="68i-DA-G2v" kind="show" id="JcS-bO-VgZ"/>
