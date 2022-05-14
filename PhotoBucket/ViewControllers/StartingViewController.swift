@@ -12,10 +12,8 @@ class StartingViewController: UICollectionViewController {
     
     // MARK: - Private Proporties
 
-    private var photos: [GetingResult] = []
+    private var photos: [ResultObject] = []
     private let searchController = UISearchController(searchResultsController: nil)
-    
-    let searchObj = SearchObjectManager.shared
     
     private var searchBarIsEmplty: Bool {
         guard let text = searchController.searchBar.text else { return false }
@@ -77,7 +75,7 @@ extension StartingViewController {
     }
     
     private func fetchSearch(text: String) {
-        searchObj.fetch(text: text) { result in
+        SearchObjectManager.shared.fetch(text: text) { result in
             switch result {
             case .success(let res):
                 self.photos = res

@@ -9,10 +9,10 @@ import Foundation
 
 struct Results: Decodable {
     let total: Int
-    let results: [GetingResult]
+    let results: [ResultObject]
 }
 
-struct GetingResult: Decodable {
+struct ResultObject: Decodable {
     let id: String
     let description: String?
     let urls: URLs

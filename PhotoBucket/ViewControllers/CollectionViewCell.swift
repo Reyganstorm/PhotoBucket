@@ -13,7 +13,7 @@ class CollectionViewCell: UICollectionViewCell {
     @IBOutlet var activityIndicator: UIActivityIndicatorView!
     @IBOutlet var imageView: PhotoImage!
     
-    func configuration(_ photoElement: GetingResult) {
+    func configuration(_ photoElement: ResultObject) {
         activityIndicator.startAnimating()
         textLabel.text = photoElement.id
         imageView.fetch(from: photoElement.urls.small)
