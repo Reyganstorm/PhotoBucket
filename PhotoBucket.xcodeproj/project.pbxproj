@@ -19,6 +19,7 @@
 		E84780C2282E6883007394BE /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84780C1282E6883007394BE /* CollectionViewCell.swift */; };
 		E84780C4282E6894007394BE /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84780C3282E6894007394BE /* TableViewCell.swift */; };
 		E8D71C64282E86A50043E71F /* PhotoImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D71C63282E86A50043E71F /* PhotoImage.swift */; };
+		E8D71C67282EA2960043E71F /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D71C66282EA2960043E71F /* InfoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		E84780C1282E6883007394BE /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		E84780C3282E6894007394BE /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		E8D71C63282E86A50043E71F /* PhotoImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoImage.swift; sourceTree = "<group>"; };
+		E8D71C66282EA2960043E71F /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 			children = (
 				E84780BE282E6432007394BE /* StartingViewController.swift */,
 				E84780BC282E6419007394BE /* FavoriteListViewController.swift */,
+				E8D71C66282EA2960043E71F /* InfoViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -226,6 +229,7 @@
 				E84780C4282E6894007394BE /* TableViewCell.swift in Sources */,
 				E84780BB282E5D2A007394BE /* NetworkManager.swift in Sources */,
 				E84780B8282E5B33007394BE /* PhotoData.swift in Sources */,
+				E8D71C67282EA2960043E71F /* InfoViewController.swift in Sources */,
 				E8D71C64282E86A50043E71F /* PhotoImage.swift in Sources */,
 				E84780C2282E6883007394BE /* CollectionViewCell.swift in Sources */,
 				E84780BD282E6419007394BE /* FavoriteListViewController.swift in Sources */,

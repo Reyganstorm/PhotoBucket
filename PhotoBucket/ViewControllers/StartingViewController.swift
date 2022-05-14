@@ -10,7 +10,7 @@ import UIKit
 
 class StartingViewController: UICollectionViewController {
     
-    
+    // MARK: - Private Proporties
     private var photos: [PhotoElement] = []
     private let searchController = UISearchController(searchResultsController: nil)
     
@@ -22,20 +22,20 @@ class StartingViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupSearchController()
-        
         fetch()
-        
     }
 
-    /*
+ 
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
+        
+        guard let indexPath = collectionView.indexPathsForSelectedItems?.first else {return}
+        let photoData = photos[indexPath.row]
+        let infoVC = segue.destination as? InfoViewController
+        infoVC?.dataPhoto = photoData
     }
-    */
+    
 
     // MARK: UICollectionViewDataSource
 
@@ -72,6 +72,7 @@ extension StartingViewController {
     }
 }
 
+// MARK: - SearchController
 extension StartingViewController {
     private func setupSearchController() {
         searchController.searchResultsUpdater = self
