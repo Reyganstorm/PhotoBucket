@@ -11,8 +11,11 @@ import UIKit
 class StartingViewController: UICollectionViewController {
     
     // MARK: - Private Proporties
-    private var photos: [PhotoElement] = []
+
+    private var photos: [GetingResult] = []
     private let searchController = UISearchController(searchResultsController: nil)
+    
+    let searchObj = SearchObjectManager.shared
     
     private var searchBarIsEmplty: Bool {
         guard let text = searchController.searchBar.text else { return false }
@@ -22,7 +25,9 @@ class StartingViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupSearchController()
-        fetch()
+        //fetch()
+        
+        fetchSearch(text: "box")
     }
 
  
@@ -67,6 +72,18 @@ extension StartingViewController {
             case .failure(let error):
                 print(error.localizedDescription)
                 print("Упс")
+            }
+        }
+    }
+    
+    private func fetchSearch(text: String) {
+        searchObj.fetch(text: text) { result in
+            switch result {
+            case .success(let res):
+                self.photos = res
+                self.collectionView.reloadData()
+            case .failure(let error):
+                print(error.localizedDescription)
             }
         }
     }

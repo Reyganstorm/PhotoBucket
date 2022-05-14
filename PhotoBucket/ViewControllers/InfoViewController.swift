@@ -17,7 +17,7 @@ class InfoViewController: UIViewController {
     
     @IBOutlet var likesButton: UIButton!
     
-    var dataPhoto: PhotoElement!
+    var dataPhoto: GetingResult!
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -12,12 +12,12 @@
 		E84780A6282E524F007394BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E84780A4282E524F007394BE /* Main.storyboard */; };
 		E84780A8282E524F007394BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E84780A7282E524F007394BE /* Assets.xcassets */; };
 		E84780AB282E524F007394BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E84780A9282E524F007394BE /* LaunchScreen.storyboard */; };
-		E84780B8282E5B33007394BE /* PhotoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84780B7282E5B33007394BE /* PhotoData.swift */; };
 		E84780BB282E5D2A007394BE /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84780BA282E5D2A007394BE /* NetworkManager.swift */; };
 		E84780BD282E6419007394BE /* FavoriteListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84780BC282E6419007394BE /* FavoriteListViewController.swift */; };
 		E84780BF282E6432007394BE /* StartingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84780BE282E6432007394BE /* StartingViewController.swift */; };
 		E84780C2282E6883007394BE /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84780C1282E6883007394BE /* CollectionViewCell.swift */; };
 		E84780C4282E6894007394BE /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84780C3282E6894007394BE /* TableViewCell.swift */; };
+		E8CF2E74282FE1FD00B7D716 /* Results.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8CF2E73282FE1FD00B7D716 /* Results.swift */; };
 		E8D71C64282E86A50043E71F /* PhotoImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D71C63282E86A50043E71F /* PhotoImage.swift */; };
 		E8D71C67282EA2960043E71F /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D71C66282EA2960043E71F /* InfoViewController.swift */; };
 /* End PBXBuildFile section */
@@ -30,12 +30,12 @@
 		E84780A7282E524F007394BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E84780AA282E524F007394BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E84780AC282E524F007394BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E84780B7282E5B33007394BE /* PhotoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoData.swift; sourceTree = "<group>"; };
 		E84780BA282E5D2A007394BE /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		E84780BC282E6419007394BE /* FavoriteListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteListViewController.swift; sourceTree = "<group>"; };
 		E84780BE282E6432007394BE /* StartingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartingViewController.swift; sourceTree = "<group>"; };
 		E84780C1282E6883007394BE /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		E84780C3282E6894007394BE /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		E8CF2E73282FE1FD00B7D716 /* Results.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Results.swift; sourceTree = "<group>"; };
 		E8D71C63282E86A50043E71F /* PhotoImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoImage.swift; sourceTree = "<group>"; };
 		E8D71C66282EA2960043E71F /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -122,7 +122,7 @@
 		E84780B6282E5AFB007394BE /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				E84780B7282E5B33007394BE /* PhotoData.swift */,
+				E8CF2E73282FE1FD00B7D716 /* Results.swift */,
 			);
 			name = Models;
 			path = ViewControllers;
@@ -228,8 +228,8 @@
 				E847809F282E524F007394BE /* AppDelegate.swift in Sources */,
 				E84780C4282E6894007394BE /* TableViewCell.swift in Sources */,
 				E84780BB282E5D2A007394BE /* NetworkManager.swift in Sources */,
-				E84780B8282E5B33007394BE /* PhotoData.swift in Sources */,
 				E8D71C67282EA2960043E71F /* InfoViewController.swift in Sources */,
+				E8CF2E74282FE1FD00B7D716 /* Results.swift in Sources */,
 				E8D71C64282E86A50043E71F /* PhotoImage.swift in Sources */,
 				E84780C2282E6883007394BE /* CollectionViewCell.swift in Sources */,
 				E84780BD282E6419007394BE /* FavoriteListViewController.swift in Sources */,
