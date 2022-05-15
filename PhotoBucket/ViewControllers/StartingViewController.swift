@@ -13,11 +13,16 @@ class StartingViewController: UICollectionViewController {
     // MARK: - Private Proporties
 
     private var photos: [ResultObject] = []
+    private var searchesPhotos: [ResultObject] = []
     private let searchController = UISearchController(searchResultsController: nil)
     
-    private var searchBarIsEmplty: Bool {
+    private var searchBarIsEmpty: Bool {
         guard let text = searchController.searchBar.text else { return false }
         return text.isEmpty
+    }
+    
+    private var isFiltering: Bool {
+        return searchController.isActive && !searchBarIsEmpty
     }
 
     override func viewDidLoad() {
@@ -46,12 +51,13 @@ class StartingViewController: UICollectionViewController {
     }
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        photos.count
+        isFiltering ? searchesPhotos.count : photos.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionCell", for: indexPath) as! CollectionViewCell
-        cell.configuration(photos[indexPath.row])
+        let photo = isFiltering ? searchesPhotos[indexPath.row] : photos[indexPath.row]
+        cell.configuration(photo)
         return cell
     }
 
@@ -75,7 +81,7 @@ extension StartingViewController {
         SearchObjectManager.shared.fetch(text: text) { result in
             switch result {
             case .success(let res):
-                self.photos = res
+                self.searchesPhotos = res
                 self.collectionView.reloadData()
             case .failure(let error):
                 print(error.localizedDescription)

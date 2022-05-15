@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Results: Decodable {
+struct JSONResults: Decodable {
     let total: Int
     let results: [ResultObject]
 }
@@ -31,6 +31,5 @@ struct User: Decodable {
 
 // MARK: - Urls
 struct URLs: Decodable {
-    let full: String
     let small: String
 }

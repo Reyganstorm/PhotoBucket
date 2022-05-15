@@ -30,7 +30,7 @@ class SearchObjectManager {
                 return
             }
             do {
-                let res = try JSONDecoder().decode(Results.self, from: data)
+                let res = try JSONDecoder().decode(JSONResults.self, from: data)
                 DispatchQueue.main.async {
                     completion(.success(res.results))
                 }

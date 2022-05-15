@@ -21,8 +21,11 @@ class InfoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        photoImageView.fetch(from: dataPhoto.urls.small)
-        nameLabel.text = dataPhoto.user.name
-
+        if dataPhoto != nil {
+            photoImageView.fetch(from: dataPhoto.urls.small)
+            nameLabel.text = dataPhoto.user.name
+        }
+        
+            
     }
 }
