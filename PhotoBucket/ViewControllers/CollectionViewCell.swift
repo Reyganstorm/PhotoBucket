@@ -22,10 +22,6 @@ class CollectionViewCell: UICollectionViewCell {
         imageView.contentMode = .scaleAspectFill
         activityIndicator.hidesWhenStopped = true
     }
-    
-    func imageConfig(_ photoElement: ResultObject) {
-        imageView.fetch(from: photoElement.urls.small)
-    }
 }
 
 

@@ -9,15 +9,20 @@ import UIKit
 
 class TableViewCell: UITableViewCell {
 
+    
+    @IBOutlet var imagePh: PhotoImage!
+    @IBOutlet var nameLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    
+    
+    func imageConfig(_ photoElement: RealmResultObject) {
+        imagePh.fetch(from: photoElement.url)
+        nameLabel.text = photoElement.name
+        imagePh.clipsToBounds = true
+        imagePh.layer.cornerRadius = 15
+        imagePh.contentMode = .scaleAspectFill
     }
-
 }

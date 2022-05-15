@@ -31,25 +31,20 @@ class FavoriteListViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "tableCell", for: indexPath)
-        var content = cell.defaultContentConfiguration()
-        let results = photoElements[indexPath.row]
-        content.text = results.name 
+        let cell = tableView.dequeueReusableCell(withIdentifier: "tableCell", for: indexPath) as! TableViewCell
         
-        cell.contentConfiguration = content
+        let results = photoElements[indexPath.row]
+        cell.imageConfig(results)
 
         return cell
     }
 
 
-    /*
     // MARK: - Navigation
-
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
     }
-    */
 
 }
