@@ -15,9 +15,16 @@ class CollectionViewCell: UICollectionViewCell {
     
     func configuration(_ photoElement: ResultObject) {
         activityIndicator.startAnimating()
-        textLabel.text = photoElement.id
+        textLabel.text = photoElement.user.name
         imageView.fetch(from: photoElement.urls.small)
+        imageView.clipsToBounds = true
+        imageView.layer.cornerRadius = 15
+        imageView.contentMode = .scaleAspectFill
         activityIndicator.hidesWhenStopped = true
+    }
+    
+    func imageConfig(_ photoElement: ResultObject) {
+        imageView.fetch(from: photoElement.urls.small)
     }
 }
 

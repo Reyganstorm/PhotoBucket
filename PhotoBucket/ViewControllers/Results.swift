@@ -31,5 +31,6 @@ struct User: Decodable {
 
 // MARK: - Urls
 struct URLs: Decodable {
+    let full: String
     let small: String
 }

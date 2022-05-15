@@ -15,7 +15,7 @@ class InfoViewController: UIViewController {
     @IBOutlet var dateLabel: UILabel!
     @IBOutlet var locationLabel: UILabel!
     
-    @IBOutlet var likesButton: UIButton!
+    @IBOutlet weak var likesButton: UIButton!
     
     var dataPhoto: ResultObject!
     

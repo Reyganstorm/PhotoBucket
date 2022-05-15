@@ -23,9 +23,8 @@ class StartingViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupSearchController()
-        //fetch()
+        fetch()
         
-        fetchSearch(text: "box")
     }
 
  
@@ -46,14 +45,12 @@ class StartingViewController: UICollectionViewController {
         1
     }
 
-
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         photos.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionCell", for: indexPath) as! CollectionViewCell
-        
         cell.configuration(photos[indexPath.row])
         return cell
     }
@@ -105,6 +102,23 @@ extension StartingViewController: UISearchResultsUpdating {
     }
     
     private func filteredContentForSearchText(_ search: String) {
-        // Продумать логику загрузки
+        fetchSearch(text: search)
     }
+}
+
+extension StartingViewController: PinterestLayoutDelegate {
+    func collectionView(_ collectionView: UICollectionView, heightForPhotoAtIndexPath indexPath: IndexPath) -> CGFloat {
+        
+//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionCell", for: indexPath) as! CollectionViewCell
+//        let image = cell.imageView.fetch(from: photos[indexPath.row].urls.small)
+        
+        let image = UIImage(named: "\(photos[indexPath.row].urls.small)")
+        
+        if let height = image?.size.height {
+            return height
+        }
+        
+        return 0.0
+    }
+    
 }
