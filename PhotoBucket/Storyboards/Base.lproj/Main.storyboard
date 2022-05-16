@@ -131,7 +131,7 @@
                                 <rect key="frame" x="15" y="492" width="290" height="31"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="blU-P5-c5j">
-                                        <rect key="frame" x="0.0" y="0.0" width="145" height="31"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="290" height="31"/>
                                         <color key="backgroundColor" systemColor="systemTealColor"/>
                                         <color key="tintColor" systemColor="tertiarySystemBackgroundColor"/>
                                         <state key="normal" title="Button"/>
@@ -141,18 +141,9 @@
                                                 <integer key="value" value="10"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="07D-ha-SnB">
-                                        <rect key="frame" x="145" y="0.0" width="145" height="31"/>
-                                        <color key="backgroundColor" red="0.80987197160720825" green="0.35026697220029335" blue="0.78575408152312465" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <color key="tintColor" systemColor="tertiarySystemBackgroundColor"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Button"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <integer key="value" value="10"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="changeStatusButtonPressed:" destination="68i-DA-G2v" eventType="touchUpInside" id="Fc8-4r-DUd"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -179,6 +170,7 @@
                     <navigationItem key="navigationItem" id="xOX-CZ-vHp"/>
                     <connections>
                         <outlet property="dateLabel" destination="XC7-e4-wtd" id="dGr-ww-Sde"/>
+                        <outlet property="likesButton" destination="blU-P5-c5j" id="y4l-ed-rkd"/>
                         <outlet property="likesLabel" destination="seC-zp-FMU" id="Aik-sb-qHG"/>
                         <outlet property="locationLabel" destination="y5h-rw-n2Y" id="cEq-xh-sFj"/>
                         <outlet property="nameLabel" destination="8SO-ch-VBS" id="mEY-KD-wgp"/>

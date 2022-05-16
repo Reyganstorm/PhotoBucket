@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class InfoViewController: UIViewController {
 
@@ -21,10 +22,21 @@ class InfoViewController: UIViewController {
     var jsonPhoto: ResultObject!
     var realmPhoto: RealmResultObject!
     
+    private var photoElements: Results<RealmResultObject>!
+    
+    var isAddToRealmArchiv: Bool = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        photoElements = StorageManager.shared.localRealm.objects(RealmResultObject.self)
+        isAddToRealmArchiv = sortedImages()
+        let buttonTitle = isAddToRealmArchiv ? "Delete" : "Save"
+        likesButton.setTitle(buttonTitle, for: .normal)
+        
         if jsonPhoto != nil {
+            
             prepareJSONFilesToView()
+            print(jsonPhoto.id)
         }
         
         if realmPhoto != nil {
@@ -32,6 +44,40 @@ class InfoViewController: UIViewController {
         }
     }
     
+    @IBAction func changeStatusButtonPressed(_ sender: UIButton) {
+        let alertTittle = "Are you really want to do this"
+        let alertMessage = "Chose answer"
+        showAlert(title: alertTittle, message: alertMessage)
+    }
+
+}
+
+extension InfoViewController {
+    private func showAlert(
+        title: String,
+        message: String
+    ) {
+        let alert = UIAlertController(
+            title: title,
+            message: message,
+            preferredStyle: .alert
+        )
+        let cancelAction = UIAlertAction(
+            title: "Cancel",
+            style: .cancel)
+        
+        let yesAction = UIAlertAction(
+            title: "YES",
+            style: .default) { _ in
+            }
+        
+        alert.addAction(yesAction)
+        alert.addAction(cancelAction)
+        present(alert, animated: true)
+    }
+}
+
+extension InfoViewController {
     private func prepareJSONFilesToView() {
         photoImageView.fetch(from: jsonPhoto.urls.small)
         likesLabel.text = "❤️ \(jsonPhoto.likes ?? 0)"
@@ -65,4 +111,20 @@ class InfoViewController: UIViewController {
         \(datePh)
         """
     }
+}
+
+extension InfoViewController {
+    private func sortedImages() -> Bool {
+        if let _ = realmPhoto {
+            return true
+        } else {
+        guard let _ = jsonPhoto else { return false}
+        for photo in photoElements {
+            if jsonPhoto.id == photo.id {
+                return true
+            }
+        }
+        return false
+    }
+}
 }
