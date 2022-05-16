@@ -46,8 +46,6 @@ class NetworkManager {
 }
 
 
-
-
 class ImageManager {
     static let shared = ImageManager()
     private init() {}
@@ -68,5 +66,3 @@ class ImageManager {
         }.resume()
     }
 }
-
-

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		708EC1E9240116F92BEE366F /* Pods_PhotoBucket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36A5A24EAABE57CD02F51863 /* Pods_PhotoBucket.framework */; };
+		E80B311F28326477001592A0 /* DateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80B311E28326477001592A0 /* DateManager.swift */; };
 		E817DC68283124A70073D768 /* RealmResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = E817DC67283124A70073D768 /* RealmResults.swift */; };
 		E817DC6B283126D90073D768 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E817DC6A283126D90073D768 /* DataManager.swift */; };
 		E817DC6D283127ED0073D768 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E817DC6C283127ED0073D768 /* StorageManager.swift */; };
@@ -32,6 +33,7 @@
 		0E7A349EE6CE047C0AE55291 /* Pods-PhotoBucket.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotoBucket.release.xcconfig"; path = "Target Support Files/Pods-PhotoBucket/Pods-PhotoBucket.release.xcconfig"; sourceTree = "<group>"; };
 		36A5A24EAABE57CD02F51863 /* Pods_PhotoBucket.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PhotoBucket.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD239206BB2604B7B2BC8998 /* Pods-PhotoBucket.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotoBucket.debug.xcconfig"; path = "Target Support Files/Pods-PhotoBucket/Pods-PhotoBucket.debug.xcconfig"; sourceTree = "<group>"; };
+		E80B311E28326477001592A0 /* DateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateManager.swift; sourceTree = "<group>"; };
 		E817DC67283124A70073D768 /* RealmResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmResults.swift; sourceTree = "<group>"; };
 		E817DC6A283126D90073D768 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		E817DC6C283127ED0073D768 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
@@ -180,6 +182,7 @@
 				E8CF2E9528310C5900B7D716 /* PinterestLayout.swift */,
 				E817DC6A283126D90073D768 /* DataManager.swift */,
 				E817DC6C283127ED0073D768 /* StorageManager.swift */,
+				E80B311E28326477001592A0 /* DateManager.swift */,
 			);
 			path = Servises;
 			sourceTree = "<group>";
@@ -322,6 +325,7 @@
 				E84780C4282E6894007394BE /* TableViewCell.swift in Sources */,
 				E817DC6B283126D90073D768 /* DataManager.swift in Sources */,
 				E84780BB282E5D2A007394BE /* NetworkManager.swift in Sources */,
+				E80B311F28326477001592A0 /* DateManager.swift in Sources */,
 				E8D71C67282EA2960043E71F /* InfoViewController.swift in Sources */,
 				E8CF2E74282FE1FD00B7D716 /* Results.swift in Sources */,
 				E817DC68283124A70073D768 /* RealmResults.swift in Sources */,

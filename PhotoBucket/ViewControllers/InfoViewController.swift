@@ -9,13 +9,13 @@ import UIKit
 
 class InfoViewController: UIViewController {
 
-    @IBOutlet var photoImageView: PhotoImage!
+    @IBOutlet private var photoImageView: PhotoImage!
     
-    @IBOutlet var nameLabel: UILabel!
-    @IBOutlet var dateLabel: UILabel!
-    @IBOutlet var locationLabel: UILabel!
+    @IBOutlet private var nameLabel: UILabel!
+    @IBOutlet private var dateLabel: UILabel!
+    @IBOutlet private var locationLabel: UILabel!
     
-    @IBOutlet weak var likesButton: UIButton!
+    @IBOutlet private var likesButton: UIButton!
     
     var jsonPhoto: ResultObject!
     var realmPhoto: RealmResultObject!
@@ -31,14 +31,35 @@ class InfoViewController: UIViewController {
         }
     }
     
-    
     private func prepareJSONFilesToView() {
         photoImageView.fetch(from: jsonPhoto.urls.small)
         nameLabel.text = jsonPhoto.user.name
+        locationLabel.text = """
+        Location:
+        \(jsonPhoto.user.location ?? "Planet Earht")
+        """
+        
+        let dateJ = DateManager.shared.changeWrongStringDateToRight(jsonPhoto.created_at ?? "Un")
+        dateLabel.text =
+        """
+        Data of creating:
+        \(dateJ)
+        """
     }
     
     private func prepareRealmFilesToView() {
         photoImageView.fetch(from: realmPhoto.url)
         nameLabel.text = realmPhoto.name
+        locationLabel.text = """
+        Location:
+        \(realmPhoto.location)
+        """
+        let datePh = DateManager.shared.getStrFromDate(realmPhoto.dateSome)
+
+        dateLabel.text =
+        """
+        Date of creating:
+        \(datePh)
+        """
     }
 }

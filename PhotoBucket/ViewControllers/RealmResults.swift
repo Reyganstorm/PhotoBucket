@@ -24,4 +24,3 @@ class RealmResultObject: Object {
     @Persisted var name: String = ""
     @Persisted var location: String = ""
 }
-

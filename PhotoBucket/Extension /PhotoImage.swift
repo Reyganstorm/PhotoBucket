@@ -17,14 +17,12 @@ class PhotoImage: UIImageView {
         if let cachedImage = getCachedImage(from: url) {
             image = cachedImage
             return
-            
         }
         
         ImageManager.shared.fetch(from: url) { data, response in
             self.image = UIImage(data: data)
             self.saveDataToCache(with: data, and: response)
         }
-        
     }
     
     private func saveDataToCache(with data: Data, and response: URLResponse) {
@@ -41,5 +39,4 @@ class PhotoImage: UIImageView {
         }
         return nil
     }
-    
 }
