@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--PB-->
+        <!--PhotoBucket-->
         <scene sceneID="6mi-xc-VHN">
             <objects>
                 <collectionViewController id="W1r-n8-Kqa" customClass="StartingViewController" customModule="PhotoBucket" customModuleProvider="target" sceneMemberID="viewController">
@@ -71,7 +71,7 @@
                             <outlet property="delegate" destination="W1r-n8-Kqa" id="j5n-nu-iN1"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" title="PB" id="qa6-ZH-Xyz"/>
+                    <navigationItem key="navigationItem" title="PhotoBucket" id="qa6-ZH-Xyz"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3j1-db-0kO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -86,22 +86,22 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="nKZ-tL-dty">
-                                <rect key="frame" x="60" y="304" width="200" height="97.5"/>
+                                <rect key="frame" x="60" y="304" width="200" height="102.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8SO-ch-VBS">
-                                        <rect key="frame" x="0.0" y="0.0" width="200" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8SO-ch-VBS">
+                                        <rect key="frame" x="0.0" y="0.0" width="200" height="25.5"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XC7-e4-wtd">
-                                        <rect key="frame" x="0.0" y="38.5" width="200" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="43.5" width="200" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y5h-rw-n2Y">
-                                        <rect key="frame" x="0.0" y="77" width="200" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="82" width="200" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -116,11 +116,18 @@
                                     </imageView>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="blU-P5-c5j">
+                                <rect key="frame" x="126.5" y="467" width="67" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Qrf-0l-Tl6"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Qrf-0l-Tl6" firstAttribute="trailing" secondItem="nKZ-tL-dty" secondAttribute="trailing" constant="60" id="DvM-XI-tjs"/>
+                            <constraint firstItem="Qrf-0l-Tl6" firstAttribute="bottom" secondItem="blU-P5-c5j" secondAttribute="bottom" constant="50" id="OcC-5a-Lhe"/>
+                            <constraint firstItem="blU-P5-c5j" firstAttribute="centerX" secondItem="9Hj-rn-PyK" secondAttribute="centerX" id="UNx-4A-md2"/>
                             <constraint firstItem="nKZ-tL-dty" firstAttribute="top" secondItem="yOy-nP-7Tt" secondAttribute="bottom" constant="20" id="WIv-Dv-hSK"/>
                             <constraint firstItem="yOy-nP-7Tt" firstAttribute="leading" secondItem="Qrf-0l-Tl6" secondAttribute="leading" constant="16" id="hZd-78-fRQ"/>
                             <constraint firstItem="yOy-nP-7Tt" firstAttribute="height" secondItem="9Hj-rn-PyK" secondAttribute="height" multiplier="0.481752" id="lJq-AP-ZGU"/>
@@ -141,17 +148,17 @@
             </objects>
             <point key="canvasLocation" x="3037.5" y="259.85915492957747"/>
         </scene>
-        <!--My Favorites-->
+        <!--My Favorites Photo-->
         <scene sceneID="4I9-qP-Rz2">
             <objects>
                 <tableViewController id="xcG-ui-tgq" customClass="FavoriteListViewController" customModule="PhotoBucket" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="8i9-1s-RWb">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" id="8i9-1s-RWb">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="tableCell" rowHeight="102" id="5fT-vu-rCR" customClass="TableViewCell" customModule="PhotoBucket" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="44.5" width="320" height="102"/>
+                                <rect key="frame" x="0.0" y="32" width="320" height="102"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5fT-vu-rCR" id="YKP-nw-MUS">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="102"/>
@@ -193,17 +200,17 @@
                             <outlet property="delegate" destination="xcG-ui-tgq" id="WAs-4b-fEk"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="My Favorites" id="ZFh-FD-SUX"/>
+                    <navigationItem key="navigationItem" title="My Favorites Photo" id="ZFh-FD-SUX"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2cw-k5-yVu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1681.875" y="755.28169014084506"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Favorite-->
         <scene sceneID="EL3-zn-oWA">
             <objects>
                 <navigationController id="eHR-Tq-hOA" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="heart.circle.fill" catalog="system" id="D0i-br-dbo"/>
+                    <tabBarItem key="tabBarItem" title="Favorite" image="heart.circle.fill" catalog="system" id="D0i-br-dbo"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="I4r-9H-j82">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="91"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -235,11 +242,11 @@
             </objects>
             <point key="canvasLocation" x="-416" y="261"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Bucket-->
         <scene sceneID="J5J-Qb-Owe">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="QqC-KL-Ezp" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="network" catalog="system" id="zDO-m0-acL"/>
+                    <tabBarItem key="tabBarItem" title="Bucket" image="network" catalog="system" id="zDO-m0-acL"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="CNg-EN-urt">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="91"/>
@@ -256,7 +263,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="JcS-bO-VgZ"/>
+        <segue reference="7dw-do-gSM"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="heart.circle.fill" catalog="system" width="128" height="121"/>

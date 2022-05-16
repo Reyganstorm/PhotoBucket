@@ -17,15 +17,28 @@ class InfoViewController: UIViewController {
     
     @IBOutlet weak var likesButton: UIButton!
     
-    var dataPhoto: ResultObject!
+    var jsonPhoto: ResultObject!
+    var realmPhoto: RealmResultObject!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if dataPhoto != nil {
-            photoImageView.fetch(from: dataPhoto.urls.small)
-            nameLabel.text = dataPhoto.user.name
+        if jsonPhoto != nil {
+            prepareJSONFilesToView()
         }
         
-            
+        if realmPhoto != nil {
+            prepareRealmFilesToView()
+        }
+    }
+    
+    
+    private func prepareJSONFilesToView() {
+        photoImageView.fetch(from: jsonPhoto.urls.small)
+        nameLabel.text = jsonPhoto.user.name
+    }
+    
+    private func prepareRealmFilesToView() {
+        photoImageView.fetch(from: realmPhoto.url)
+        nameLabel.text = realmPhoto.name
     }
 }

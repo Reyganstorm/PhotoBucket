@@ -29,7 +29,6 @@ class StartingViewController: UICollectionViewController {
         super.viewDidLoad()
         setupSearchController()
         fetch()
-        
     }
 
  
@@ -40,12 +39,11 @@ class StartingViewController: UICollectionViewController {
         guard let indexPath = collectionView.indexPathsForSelectedItems?.first else {return}
         let photoData = photos[indexPath.row]
         let infoVC = segue.destination as? InfoViewController
-        infoVC?.dataPhoto = photoData
+        infoVC?.jsonPhoto = photoData
     }
     
 
     // MARK: UICollectionViewDataSource
-
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         1
     }
@@ -114,16 +112,6 @@ extension StartingViewController: UISearchResultsUpdating {
 
 extension StartingViewController: PinterestLayoutDelegate {
     func collectionView(_ collectionView: UICollectionView, heightForPhotoAtIndexPath indexPath: IndexPath) -> CGFloat {
-        
-//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionCell", for: indexPath) as! CollectionViewCell
-//        let image = cell.imageView.fetch(from: photos[indexPath.row].urls.small)
-        
-        let image = UIImage(named: "\(photos[indexPath.row].urls.small)")
-        
-        if let height = image?.size.height {
-            return height
-        }
-        
         return 0.0
     }
     
