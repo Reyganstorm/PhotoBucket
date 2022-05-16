@@ -13,8 +13,7 @@ struct JSONResults: Decodable {
 }
 
 struct ResultObject: Decodable {
-    let id: String
-    let description: String?
+    
     let urls: URLs
     
     let created_at: String?

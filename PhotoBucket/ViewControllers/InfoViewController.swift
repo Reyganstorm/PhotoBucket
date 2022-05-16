@@ -14,6 +14,7 @@ class InfoViewController: UIViewController {
     @IBOutlet private var nameLabel: UILabel!
     @IBOutlet private var dateLabel: UILabel!
     @IBOutlet private var locationLabel: UILabel!
+    @IBOutlet var likesLabel: UILabel!
     
     @IBOutlet private var likesButton: UIButton!
     
@@ -33,6 +34,7 @@ class InfoViewController: UIViewController {
     
     private func prepareJSONFilesToView() {
         photoImageView.fetch(from: jsonPhoto.urls.small)
+        likesLabel.text = "❤️ \(jsonPhoto.likes ?? 0)"
         nameLabel.text = jsonPhoto.user.name
         locationLabel.text = """
         Location:
@@ -42,13 +44,14 @@ class InfoViewController: UIViewController {
         let dateJ = DateManager.shared.changeWrongStringDateToRight(jsonPhoto.created_at ?? "Un")
         dateLabel.text =
         """
-        Data of creating:
+        Date of creating:
         \(dateJ)
         """
     }
     
     private func prepareRealmFilesToView() {
         photoImageView.fetch(from: realmPhoto.url)
+        likesLabel.text = "❤️ \(realmPhoto.likes)"
         nameLabel.text = realmPhoto.name
         locationLabel.text = """
         Location:

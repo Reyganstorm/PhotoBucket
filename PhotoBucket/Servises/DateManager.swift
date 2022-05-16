@@ -21,6 +21,7 @@ class DateManager {
 
     func getStrFromDate(_ date: Date) -> String {
         let dateFormatter = DateFormatter()
+        dateFormatter .locale = Locale(identifier: "en_us")
         dateFormatter.dateFormat = "MMM d, yyyy"
         let rightDate = dateFormatter.string(from: date)
         return rightDate

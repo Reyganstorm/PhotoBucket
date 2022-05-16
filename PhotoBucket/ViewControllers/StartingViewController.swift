@@ -37,7 +37,7 @@ class StartingViewController: UICollectionViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         guard let indexPath = collectionView.indexPathsForSelectedItems?.first else {return}
-        let photoData = photos[indexPath.row]
+        let photoData = isFiltering ? searchesPhotos[indexPath.row] : photos[indexPath.row]
         let infoVC = segue.destination as? InfoViewController
         infoVC?.jsonPhoto = photoData
     }
