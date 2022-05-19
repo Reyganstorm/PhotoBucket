@@ -19,24 +19,28 @@ class InfoViewController: UIViewController {
     
     @IBOutlet private var likesButton: UIButton!
     
+    // MARK: - Prepared Objects
     var jsonPhoto: ResultObject!
     var realmPhoto: RealmResultObject!
     
+    // MARK: - Objects for sorting
     private var photoElements: Results<RealmResultObject>!
-    
     var isAddToRealmArchiv: Bool = false
+    
+    // MARK: - Object for work
+    private var objectForWork: RealmResultObject!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         photoElements = StorageManager.shared.localRealm.objects(RealmResultObject.self)
-        isAddToRealmArchiv = sortedImages()
+        isAddToRealmArchiv = sortedImages() { photo in
+            self.objectForWork = photo
+        }
         let buttonTitle = isAddToRealmArchiv ? "Delete" : "Save"
         likesButton.setTitle(buttonTitle, for: .normal)
         
         if jsonPhoto != nil {
-            
             prepareJSONFilesToView()
-            print(jsonPhoto.id)
         }
         
         if realmPhoto != nil {
@@ -45,21 +49,19 @@ class InfoViewController: UIViewController {
     }
     
     @IBAction func changeStatusButtonPressed(_ sender: UIButton) {
-        let alertTittle = "Are you really want to do this"
-        let alertMessage = "Chose answer"
-        showAlert(title: alertTittle, message: alertMessage)
+        let alertTittle = isAddToRealmArchiv ? "Delete" : "Add"
+        showAlert(title: "Are you really want to \(alertTittle) this", objStatus: isAddToRealmArchiv)
     }
-
 }
 
 extension InfoViewController {
     private func showAlert(
         title: String,
-        message: String
+        objStatus: Bool
     ) {
         let alert = UIAlertController(
             title: title,
-            message: message,
+            message: "Make a choice",
             preferredStyle: .alert
         )
         let cancelAction = UIAlertAction(
@@ -69,10 +71,38 @@ extension InfoViewController {
         let yesAction = UIAlertAction(
             title: "YES",
             style: .default) { _ in
+                if objStatus == false {
+                    self.objectForWork = StorageManager.shared.convertResult(self.jsonPhoto)
+                    StorageManager.shared.save(self.objectForWork)
+                    self.likesButton.setTitle("Delete", for: .normal)
+                    self.isAddToRealmArchiv.toggle()
+                    self.showSimpleAlert(message: "The photo has been added to the collection")
+                } else {
+                    StorageManager.shared.delete(self.objectForWork)
+                    self.likesButton.setTitle("Add", for: .normal)
+                    self.isAddToRealmArchiv.toggle()
+                    self.showSimpleAlert(message: "Photo has been removed")
+                }
             }
         
         alert.addAction(yesAction)
         alert.addAction(cancelAction)
+        present(alert, animated: true)
+    }
+    
+    private func showSimpleAlert(
+        message: String
+    ) {
+        let alert = UIAlertController(
+            title: "Succses",
+            message: message,
+            preferredStyle: .alert
+        )
+        let okAction = UIAlertAction(
+            title: "OK",
+            style: .cancel)
+        
+        alert.addAction(okAction)
         present(alert, animated: true)
     }
 }
@@ -114,17 +144,19 @@ extension InfoViewController {
 }
 
 extension InfoViewController {
-    private func sortedImages() -> Bool {
-        if let _ = realmPhoto {
+    private func sortedImages(completion: @escaping(RealmResultObject) -> Void) -> Bool {
+        if let photo = realmPhoto {
+            completion(photo)
             return true
         } else {
-        guard let _ = jsonPhoto else { return false}
-        for photo in photoElements {
-            if jsonPhoto.id == photo.id {
-                return true
+            guard let _ = jsonPhoto else { return false}
+            for photo in photoElements {
+                if jsonPhoto.id == photo.id {
+                    completion(photo)
+                    return true
+                }
             }
+            return false
         }
-        return false
     }
-}
 }
