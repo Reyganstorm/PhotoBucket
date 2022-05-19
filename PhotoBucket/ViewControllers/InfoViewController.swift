@@ -49,8 +49,8 @@ class InfoViewController: UIViewController {
     }
     
     @IBAction func changeStatusButtonPressed(_ sender: UIButton) {
-        let alertTittle = isAddToRealmArchiv ? "Delete" : "Add"
-        showAlert(title: "Are you really want to \(alertTittle) this", objStatus: isAddToRealmArchiv)
+        let alertTittle = isAddToRealmArchiv ? "delete" : "save"
+        showAlert(title: "Do you really want to \(alertTittle) the photo?", objStatus: isAddToRealmArchiv)
     }
 }
 
