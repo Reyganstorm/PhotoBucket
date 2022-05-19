@@ -1,5 +1,25 @@
 # PhotoBucket
 
+ 
+
+## Технологии
+
+```ruby
+UIKit
+```
+```ruby
+Realm
+```
+
+## Установка
+
+### CocoaPods
+
+```ruby
+pod 'RealmSwift', '~>10'
+```
+
+## Описание 
 
 Стартовый экран — таббар с двумя вкладками.
 
@@ -19,9 +39,11 @@
 При нажатии вызывается Алерт подтверждающий запрос.
 И кнопку выхода экрана.
 
-Ссылка на API – https://unsplash.com/documentation
+## API
 
+https://unsplash.com/documentation
 
+## Примеры
 
 ![Simulator Screen Shot - iPhone 8 - 2022-05-19 at 13 04 37](https://user-images.githubusercontent.com/79254522/169286231-f7e4e879-e915-41eb-9525-18e5869bc7d4.png)
 
