@@ -18,6 +18,11 @@ class FavoriteListViewController: UITableViewController {
         photoElements = StorageManager.shared.localRealm.objects(RealmResultObject.self)
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        photoElements = StorageManager.shared.localRealm.objects(RealmResultObject.self)
+        tableView.reloadData()
+    }
     
     private func createTempData() {
         DataManager.shared.createTempData {
