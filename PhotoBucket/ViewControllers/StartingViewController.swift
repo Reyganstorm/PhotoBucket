@@ -11,7 +11,6 @@ import UIKit
 class StartingViewController: UICollectionViewController {
     
     // MARK: - Private Proporties
-
     private var photos: [ResultObject] = []
     private var searchesPhotos: [ResultObject] = []
     private let searchController = UISearchController(searchResultsController: nil)
@@ -25,6 +24,7 @@ class StartingViewController: UICollectionViewController {
         return searchController.isActive && !searchBarIsEmpty
     }
 
+    // MARK: - Live Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupSearchController()
